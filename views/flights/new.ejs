@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Add New Flight</title>
+</head>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/flights">All Flights</a>
+</nav>
+
+<body>
+    <form action="/flights" method="POST">
+        <label>Airline:</label>
+        <input type="text" name="airline" /><br />
+        <label>Airport</label>
+        <select name="airport">
+          <option value="DEN">DEN</option>
+          <option value="AUS">AUS</option>
+          <option value="DFW">DFW</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option></select
+        ><br />
+        <label>Flight Number:</label>
+        <input type="text" name="flightNo" /><br />
+        <label>Departure Date:</label>
+        <input type="datetime-local"  name="departs" />
+        <br />
+        <input
+          type="submit"
+          class="btn btn-info center-button"
+          value="Add Flight"
+        />
+      </form>
+</body>
+</html>

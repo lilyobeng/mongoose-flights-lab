@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>FLight Details</title>
+    <title>Document</title>
+</head>
+<body>
+    <p>airline: <%=flight.airline%> </p>
+    <p>airport: <%=flight.airport%> </p>
+    <p>flight Number: <%=flight.flightNo%> </p>
+    <p>departure: <%=flight.departs%> </p>
+    
+    <h3>Destination</h3>
+    
+    <form action="/flights/<%=flight.id%> " method="POST">
+        
+        <label>Airport</label>
+        <select name="airport">
+          <option value="DEN">DEN</option>
+          <option value="AUS">AUS</option>
+          <option value="DFW">DFW</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option></select
+        ><br />
+       
+        <label>Arrival Date:</label>
+        <input type="datetime-local"  name="arrival" />
+        <br />
+        <input
+          type="submit"
+    
+          value="Add Destination"
+        />
+      </form>
+      <table >
+        <thead>
+          <tr>
+            <th scope=“col”>Airport</th>
+            <th scope=“col”>Arrival Date</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <% flight.destinations.forEach(function(el) { %>
+          <tr>
+            <th scope=“row”><%=el.airport%></th>
+            <td><%=el.arrival%></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <a href="/tickets/<%=flight.id%>/ticket/new "><button>Add Tickets</button></a>
+    
+</body>
+</html>
